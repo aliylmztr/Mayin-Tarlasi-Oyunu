@@ -146,13 +146,13 @@ public class MineSweeper {
     public void run() {
         Scanner input = new Scanner(System.in);
 
-        String[][] openMap = new String[rowNumber][columnNumber];
-        numberOfClosestMine(openMap);
+        String[][] map = new String[rowNumber][columnNumber];
+        numberOfClosestMine(map);
 
-        String[][] hideMap = new String[rowNumber][columnNumber];
+        String[][] gameMap = new String[rowNumber][columnNumber];
         for (int i = 0; i < rowNumber; i++) {
             for (int j = 0; j < columnNumber; j++) {
-                hideMap[i][j] = "-";
+                gameMap[i][j] = "-";
             }
         }
 
@@ -166,7 +166,7 @@ public class MineSweeper {
             System.out.println("===========================");
             for (int i = 0; i < rowNumber; i++) {
                 for (int j = 0; j < columnNumber; j++) {
-                    System.out.print(hideMap[i][j] + "  ");
+                    System.out.print(gameMap[i][j] + "  ");
                 }
                 System.out.println();
             }
@@ -207,16 +207,16 @@ public class MineSweeper {
                 }
             }
 
-            hideMap[row][column] = openMap[row][column];
+            gameMap[row][column] = map[row][column];
 
-            if (hideMap[row][column] == "*") {
+            if (gameMap[row][column] == "*") {
                 isFindMine = true;
                 System.out.println("Game Over!!");
                 System.out.println("===========================");
                 System.out.println("\nMayınların Konumu");
                 for (int i = 0; i < rowNumber; i++) {
                     for (int j = 0; j < columnNumber; j++) {
-                        System.out.print(openMap[i][j] + "  ");
+                        System.out.print(map[i][j] + "  ");
                     }
                     System.out.println();
                 }
@@ -228,7 +228,7 @@ public class MineSweeper {
                 System.out.println("Oyunu Kazandınız!");
                 for (int i = 0; i < rowNumber; i++) {
                     for (int j = 0; j < columnNumber; j++) {
-                        System.out.print(openMap[i][j] + "  ");
+                        System.out.print(map[i][j] + "  ");
                     }
                     System.out.println();
                 }
