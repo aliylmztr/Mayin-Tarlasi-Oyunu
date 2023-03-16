@@ -158,7 +158,7 @@ public class MineSweeper {
 
         int move = 0;
         int numberOfMine = (rowNumber * columnNumber) / 4;
-        int maxNumberOfCorrectMove = (rowNumber * columnNumber) - numberOfMine;
+        int numberOfSafeArea = (rowNumber * columnNumber) - numberOfMine;
         boolean isWin = false;
         boolean isFindMine = false;
 
@@ -223,7 +223,7 @@ public class MineSweeper {
             }
             move++;
 
-            if (move == maxNumberOfCorrectMove) {
+            if (move == numberOfSafeArea) {
                 isWin = true;
                 System.out.println("Oyunu Kazandınız!");
                 for (int i = 0; i < rowNumber; i++) {
