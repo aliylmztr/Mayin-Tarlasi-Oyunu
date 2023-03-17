@@ -1,11 +1,11 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class Main94_1MineSweeper {
+public class MineSweeper {
     int rowNumber;
     int columnNumber;
 
-    Main94_1MineSweeper(int rowNumber, int columnNumber) {
+    MineSweeper(int rowNumber, int columnNumber) {
         this.rowNumber = rowNumber;
         this.columnNumber = columnNumber;
     }
